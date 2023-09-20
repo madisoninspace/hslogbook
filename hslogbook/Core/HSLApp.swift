@@ -33,6 +33,6 @@ struct HSLApp: App {
         WindowGroup {
             MainView()
         }
-        .modelContainer(previewContainer)
+        .modelContainer(sharedModelContainer)
     }
 }

@@ -45,6 +45,9 @@
 		BBD35AEA2AB94632003AE475 /* Aircraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD35AE92AB94632003AE475 /* Aircraft.swift */; };
 		BBD35AEC2AB94757003AE475 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD35AEB2AB94757003AE475 /* Flight.swift */; };
 		BBD61BF72ABB9A8800593032 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD61BF62ABB9A8800593032 /* FormTextField.swift */; };
+		BBD61BF92ABBA1F000593032 /* AirlineEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD61BF82ABBA1F000593032 /* AirlineEditor.swift */; };
+		BBD61C012ABBAA9200593032 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = BBD61C002ABBAA9200593032 /* SwiftCSV */; };
+		BBD61C052ABBAF8F00593032 /* doc8643.csv in Resources */ = {isa = PBXBuildFile; fileRef = BBD61C042ABBAF8F00593032 /* doc8643.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +90,8 @@
 		BBD35AE92AB94632003AE475 /* Aircraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aircraft.swift; sourceTree = "<group>"; };
 		BBD35AEB2AB94757003AE475 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		BBD61BF62ABB9A8800593032 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		BBD61BF82ABBA1F000593032 /* AirlineEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineEditor.swift; sourceTree = "<group>"; };
+		BBD61C042ABBAF8F00593032 /* doc8643.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = doc8643.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD35AC92AB94003003AE475 /* FlagKit in Frameworks */,
+				BBD61C012ABBAA9200593032 /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +157,7 @@
 		BB6FC11E2ABB964A00DB3CBE /* Editors */ = {
 			isa = PBXGroup;
 			children = (
+				BBD61BF82ABBA1F000593032 /* AirlineEditor.swift */,
 				BB6FC11F2ABB971900DB3CBE /* TypeCodeEditor.swift */,
 			);
 			path = Editors;
@@ -207,6 +214,7 @@
 		BBD35AB32AB93221003AE475 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BBD61BFA2ABBA7CF00593032 /* External */,
 				BBD35AB42AB93227003AE475 /* Models */,
 				BBD35ADC2AB9419E003AE475 /* Search */,
 				BBD35AE52AB945A5003AE475 /* ReverseGeo.swift */,
@@ -274,6 +282,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		BBD61BFA2ABBA7CF00593032 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				BBD61C042ABBAF8F00593032 /* doc8643.csv */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,6 +308,7 @@
 			name = hslogbook;
 			packageProductDependencies = (
 				BBD35AC82AB94003003AE475 /* FlagKit */,
+				BBD61C002ABBAA9200593032 /* SwiftCSV */,
 			);
 			productName = hslogbook;
 			productReference = BBD35AA12AB93204003AE475 /* hslogbook.app */;
@@ -325,6 +342,7 @@
 			mainGroup = BBD35A982AB93204003AE475;
 			packageReferences = (
 				BBD35AC72AB94003003AE475 /* XCRemoteSwiftPackageReference "FlagKit" */,
+				BBD61BFF2ABBAA9200593032 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
 			);
 			productRefGroup = BBD35AA22AB93204003AE475 /* Products */;
 			projectDirPath = "";
@@ -341,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD35AAC2AB93204003AE475 /* Preview Assets.xcassets in Resources */,
+				BBD61C052ABBAF8F00593032 /* doc8643.csv in Resources */,
 				BBD35AA92AB93204003AE475 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +396,7 @@
 				BBD35AD52AB940E2003AE475 /* AppTabView.swift in Sources */,
 				BBD35AD22AB940E2003AE475 /* AppScreen.swift in Sources */,
 				BB6FC1142ABA99E000DB3CBE /* AircraftCore.swift in Sources */,
+				BBD61BF92ABBA1F000593032 /* AirlineEditor.swift in Sources */,
 				BB6FC1182ABA9A1B00DB3CBE /* AirportCore.swift in Sources */,
 				BB6FC11D2ABA9EE700DB3CBE /* AirportMap.swift in Sources */,
 				BB6FC1032ABA89E600DB3CBE /* TypeCodeTable.swift in Sources */,
@@ -606,6 +626,14 @@
 				minimumVersion = 2.4.0;
 			};
 		};
+		BBD61BFF2ABBAA9200593032 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -613,6 +641,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBD35AC72AB94003003AE475 /* XCRemoteSwiftPackageReference "FlagKit" */;
 			productName = FlagKit;
+		};
+		BBD61C002ABBAA9200593032 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBD61BFF2ABBAA9200593032 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

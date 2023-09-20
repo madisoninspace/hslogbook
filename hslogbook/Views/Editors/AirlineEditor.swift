@@ -1,5 +1,5 @@
 //
-//  TypeCodeEditor.swift
+//  AirlineEditor.swift
 //  hslogbook
 //
 //  Created by Hannah Wass on 9/20/23.
@@ -8,43 +8,55 @@
 
 import SwiftUI
 
-struct TypeCodeEditor: View {
+struct AirlineEditor: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    @State var typeCode: TypeCode?
+    @State var airline: Airline?
     
-    @State private var code: String = ""
-    @State private var manufacturer: String = ""
-    @State private var model: String = ""
+    @State private var iata: String = ""
+    @State private var icao: String = ""
+    @State private var name: String = ""
+    @State private var callsign: String = ""
+    @State private var country: String = ""
+    @State private var remarks: String = ""
     @State private var tags: [String] = []
     
     @State private var tagField: String = ""
     
     private var title: String {
-        typeCode == nil ? "New Type Code" : "Edit \(typeCode?.fullModel ?? "")"
+        airline == nil ? "New Airline" : "Edit \(airline?.name ?? "")"
     }
     
     private func save() {
-        if let typeCode {
-            typeCode.code = code
-            typeCode.manufacturer = manufacturer
-            typeCode.model = model
-            typeCode.tags = tags
+        if let airline {
+            airline.iata = iata
+            airline.icao = icao
+            airline.name = name
+            airline.callsign = callsign
+            airline.country = country
+            airline.remarks = remarks
+            airline.tags = tags
         } else {
-            let newTypeCode = TypeCode(code: code, manufacturer: manufacturer, model: model, tags: tags)
-            modelContext.insert(newTypeCode)
+            let newAirline = Airline(iata: iata, icao: icao, name: name, callsign: callsign, country: country, remarks: remarks, tags: tags)
+            modelContext.insert(newAirline)
         }
     }
     
     private func generateTags() {
-        if !code.isEmpty {
-            tags.append(code)
+        if !iata.isEmpty {
+            tags.append(iata)
         }
         
-        if !manufacturer.isEmpty && !model.isEmpty {
-            tags.append(manufacturer)
-            tags.append(model)
-            tags.append("\(manufacturer) \(model)")
+        if !icao.isEmpty {
+            tags.append(icao)
+        }
+        
+        if !name.isEmpty {
+            tags.append(name)
+        }
+        
+        if !callsign.isEmpty {
+            tags.append(callsign)
         }
     }
     
@@ -53,10 +65,18 @@ struct TypeCodeEditor: View {
     var body: some View {
         Form {
             Section {
-                FormTextField(title: "ICAO Code", content: $code, min: 1, max: 4)
-                FormTextField(title: "Manufacturer", content: $manufacturer)
-                FormTextField(title: "Model", content: $model)
+                FormTextField(title: "IATA Code", content: $iata, min: 0, max: 2)
+                FormTextField(title: "ICAO Code", content: $icao, min: 1, max: 4)
+                FormTextField(title: "Name", content: $name)
+                FormTextField(title: "Callsign", content: $callsign)
+                FormTextField(title: "Country", content: $country, min: 1, max: 2)
             }
+            
+            Section(content: {
+                TextEditor(text: $remarks)
+            }, header: {
+                Text("Remarks")
+            })
             
             Section {
                 List(tags, id: \.self) { tag in
@@ -88,8 +108,8 @@ struct TypeCodeEditor: View {
         }
         .alert("Delete", isPresented: $showDeleteAlert, actions: {
             Button("Yes", role: .destructive) {
-                if let typeCode {
-                    modelContext.delete(typeCode)
+                if let airline {
+                    modelContext.delete(airline)
                     dismiss()
                 }
             }
@@ -98,16 +118,19 @@ struct TypeCodeEditor: View {
                 
             }
         }, message: {
-            Text("Are you sure you want to delete \(typeCode?.fullModel ?? "")")
+            Text("Are you sure you want to delete \(airline?.name ?? "")")
         })
         .onAppear {
-            if let typeCode {
-                code = typeCode.code
-                manufacturer = typeCode.manufacturer
-                model = typeCode.model
+            if let airline {
+                iata = airline.iata
+                icao = airline.icao
+                name = airline.name
+                callsign = airline.callsign
+                country = airline.country
+                remarks = airline.remarks
                 
-                if typeCode.tags.count > 0 {
-                    for tag in typeCode.tags {
+                if airline.tags.count > 0 {
+                    for tag in airline.tags {
                         tags.append(tag)
                     }
                 }
@@ -127,7 +150,7 @@ struct TypeCodeEditor: View {
             }
             
             ToolbarItem(placement: .destructiveAction) {
-                if let typeCode {
+                if let airline {
                     Button {
                         showDeleteAlert.toggle()
                     } label: {
@@ -150,8 +173,5 @@ struct TypeCodeEditor: View {
 }
 
 #Preview {
-    NavigationStack {
-        TypeCodeEditor()
-            .modelContainer(previewContainer)
-    }
+    AirlineEditor()
 }

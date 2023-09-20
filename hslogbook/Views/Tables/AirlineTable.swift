@@ -50,6 +50,9 @@ struct AirlineTable: View {
         
         return filtered
     }
+    
+    @State private var showEditor: Bool = false
+    @State private var showNewEditor: Bool = false
 
     var body: some View {
         Table(filteredAirlines, selection: $tableSelection) {
@@ -80,6 +83,32 @@ struct AirlineTable: View {
             Text("Callsign")
                 .tag(AirlineSearchScope.callsign)
         })
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    showEditor.toggle()
+                } label: {
+                    Label("Edit", systemImage: "pencil")
+                }
+                .disabled(isSelected())
+            }
+            
+            ToolbarItem {
+                Button {
+                    showNewEditor.toggle()
+                } label: {
+                    Label("New", systemImage: "plus")
+                }
+            }
+        }
+    }
+    
+    private func isSelected() -> Bool {
+        if airlines.first(where: {$0.id == tableSelection}) != nil {
+            return false
+        } else {
+            return true
+        }
     }
 }
 

@@ -23,6 +23,7 @@
 		BB6FC1162ABA9A0000DB3CBE /* AirlineCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FC1152ABA9A0000DB3CBE /* AirlineCore.swift */; };
 		BB6FC1182ABA9A1B00DB3CBE /* AirportCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FC1172ABA9A1B00DB3CBE /* AirportCore.swift */; };
 		BB6FC11A2ABA9A3600DB3CBE /* FlightCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FC1192ABA9A3600DB3CBE /* FlightCore.swift */; };
+		BB6FC11D2ABA9EE700DB3CBE /* AirportMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FC11C2ABA9EE700DB3CBE /* AirportMap.swift */; };
 		BBD35AA52AB93204003AE475 /* HSLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD35AA42AB93204003AE475 /* HSLApp.swift */; };
 		BBD35AA92AB93204003AE475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD35AA82AB93204003AE475 /* Assets.xcassets */; };
 		BBD35AAC2AB93204003AE475 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD35AAB2AB93204003AE475 /* Preview Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		BB6FC1152ABA9A0000DB3CBE /* AirlineCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineCore.swift; sourceTree = "<group>"; };
 		BB6FC1172ABA9A1B00DB3CBE /* AirportCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportCore.swift; sourceTree = "<group>"; };
 		BB6FC1192ABA9A3600DB3CBE /* FlightCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCore.swift; sourceTree = "<group>"; };
+		BB6FC11C2ABA9EE700DB3CBE /* AirportMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportMap.swift; sourceTree = "<group>"; };
 		BBD35AA12AB93204003AE475 /* hslogbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hslogbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD35AA42AB93204003AE475 /* HSLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSLApp.swift; sourceTree = "<group>"; };
 		BBD35AA82AB93204003AE475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 				BB6FC10F2ABA952100DB3CBE /* AirlineInfo.swift */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		BB6FC11B2ABA9EDC00DB3CBE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BB6FC11C2ABA9EE700DB3CBE /* AirportMap.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		BBD35A982AB93204003AE475 = {
@@ -209,6 +219,7 @@
 			children = (
 				BB6FC0F62ABA425F00DB3CBE /* Core */,
 				BB6FC10E2ABA950D00DB3CBE /* Info */,
+				BB6FC11B2ABA9EDC00DB3CBE /* Other */,
 				BB6FC0E32ABA3F1800DB3CBE /* Reusable */,
 				BB6FC0F92ABA470B00DB3CBE /* Statistics */,
 				BBD35AD92AB94150003AE475 /* Tables */,
@@ -352,6 +363,7 @@
 				BBD35AD22AB940E2003AE475 /* AppScreen.swift in Sources */,
 				BB6FC1142ABA99E000DB3CBE /* AircraftCore.swift in Sources */,
 				BB6FC1182ABA9A1B00DB3CBE /* AirportCore.swift in Sources */,
+				BB6FC11D2ABA9EE700DB3CBE /* AirportMap.swift in Sources */,
 				BB6FC1032ABA89E600DB3CBE /* TypeCodeTable.swift in Sources */,
 				BBD35AE62AB945A5003AE475 /* ReverseGeo.swift in Sources */,
 				BB6FC1072ABA8C1A00DB3CBE /* AircraftTable.swift in Sources */,

@@ -9,14 +9,41 @@
 import SwiftUI
 
 struct AirportCore: View {
+    @State private var displayMode: Int = 0
+    
     var body: some View {
         NavigationStack {
-            AirportTable()
+            switch displayMode {
+                case 0:
+                    AirportTable()
+                    
+                case 1:
+                    AirportMap()
+                    
+                default:
+                    Text("How'd you get here?")
+            }
         }
         .modifier(GWToolbarRole(title: "Airports"))
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Picker(selection: $displayMode.animation(), content: {
+                    Image(systemName: "tablecells")
+                        .tag(0)
+                    
+                    Image(systemName: "map")
+                        .tag(1)
+                }, label: {
+                    
+                }).pickerStyle(.segmented)
+            }
+        }
     }
 }
 
 #Preview {
-    AirportCore()
+    NavigationStack {
+        AirportCore()
+            .modelContainer(previewContainer)
+    }
 }

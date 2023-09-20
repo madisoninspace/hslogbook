@@ -11,10 +11,16 @@ struct AppSidebarList: View {
     @Binding var selection: AppScreen?
     
     var body: some View {
-        List(AppScreen.allCases, selection: $selection) { screen in
-            NavigationLink(value: screen) {
-                screen.label
-            }
+        List(selection: $selection) {
+            Section(content: {
+                ForEach(AppScreen.allCases, id: \.self) { screen in
+                    NavigationLink(value: screen) {
+                        screen.label
+                    }
+                }
+            }, header: {
+                Text("Data")
+            })
         }
         .navigationTitle("HSL ✈️")
     }

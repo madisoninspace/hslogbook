@@ -54,6 +54,8 @@ struct TypeCodeTable: View {
     }
     
     @State private var tableSelection: TypeCode.ID?
+    @State private var showEditor: Bool = false
+    @State private var showNewEditor: Bool = false
     
     var body: some View {
         Table(filteredCodes, selection: $tableSelection) {
@@ -90,6 +92,44 @@ struct TypeCodeTable: View {
             Text("Mfg/Model")
                 .tag(TypeCodeSearchScope.fullModel)
         })
+        .sheet(isPresented: $showEditor, content: {
+            if let code = codes.first(where: {$0.id == tableSelection}) {
+                NavigationStack {
+                    TypeCodeEditor(typeCode: code)
+                }
+            }
+        })
+        .sheet(isPresented: $showNewEditor, content: {
+            NavigationStack {
+                TypeCodeEditor()
+            }
+        })
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    showEditor.toggle()
+                } label: {
+                    Label("Edit", systemImage: "pencil")
+                }
+                .disabled(isSelected())
+            }
+            
+            ToolbarItem {
+                Button {
+                    showNewEditor.toggle()
+                } label: {
+                    Label("New", systemImage: "plus")
+                }
+            }
+        }
+    }
+    
+    private func isSelected() -> Bool {
+        if codes.first(where: {$0.id == tableSelection}) != nil {
+            return false
+        } else {
+            return true
+        }
     }
 }
 

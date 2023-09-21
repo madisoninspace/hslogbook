@@ -18,7 +18,7 @@ struct AirportMap: View {
         SortDescriptor(\Airport.name)
     ], animation: .spring) private var airports: [Airport]
     
-    @State private var country: String = ""
+    @State private var country: String = "ALLAIRPORTS"
     
     private func markerColor(_ visited: Bool) -> Color {
         if visited {
@@ -28,9 +28,22 @@ struct AirportMap: View {
         }
     }
     
+    private func airportList() -> [Airport] {
+        switch country {
+            case "ALLAIRPORTS":
+                return airports
+                
+            case "VISITED":
+                return airports.filter({$0.visited == true})
+                
+            default:
+                return airports.filter({$0.country == country})
+        }
+    }
+    
     var body: some View {
         Map {
-            ForEach(airports.filter({$0.country == country})) { airport in
+            ForEach(airportList()) { airport in
                 if airport.latitude != 0.0 && airport.longitude != 0.0 {
                     Marker(airport.name, monogram: Text(airport.icao), coordinate: airport.coordinates)
                         .tint(markerColor(airport.visited))
@@ -40,8 +53,13 @@ struct AirportMap: View {
         .toolbar {
             ToolbarItem {
                 Picker(selection: $country, content: {
-                    Text("None")
-                        .tag("")
+                    Text("All Airports")
+                        .tag("ALLAIRPORTS")
+                    
+                    Text("Visited Only")
+                        .tag("VISITED")
+                    
+                    Divider()
                     
                     ForEach(IsoCountries.allCountries, id: \.alpha2) { c in
                         Text(c.name)

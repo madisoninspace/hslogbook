@@ -57,6 +57,7 @@
 		BBDBD2F02ABBE7D3005B1C18 /* TypeCodeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2EF2ABBE7D3005B1C18 /* TypeCodeFile.swift */; };
 		BBDBD2F22ABBEC5A005B1C18 /* AirlineFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F12ABBEC5A005B1C18 /* AirlineFile.swift */; };
 		BBDBD2F42ABBEE1F005B1C18 /* AirportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F32ABBEE1F005B1C18 /* AirportFile.swift */; };
+		BBDBD2F62ABBEFB7005B1C18 /* AirportSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F52ABBEFB7005B1C18 /* AirportSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		BBDBD2EF2ABBE7D3005B1C18 /* TypeCodeFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCodeFile.swift; sourceTree = "<group>"; };
 		BBDBD2F12ABBEC5A005B1C18 /* AirlineFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineFile.swift; sourceTree = "<group>"; };
 		BBDBD2F32ABBEE1F005B1C18 /* AirportFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportFile.swift; sourceTree = "<group>"; };
+		BBDBD2F52ABBEFB7005B1C18 /* AirportSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 		BBD35ADC2AB9419E003AE475 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				BBDBD2F52ABBEFB7005B1C18 /* AirportSearch.swift */,
 				BBD35ADD2AB94220003AE475 /* Scopes.swift */,
 			);
 			path = Search;
@@ -415,6 +418,7 @@
 				BBD61C0B2ABBBB2400593032 /* TitleCased.swift in Sources */,
 				BBD35AE02AB9435E003AE475 /* TypeCode.swift in Sources */,
 				BB6FC10D2ABA934300DB3CBE /* FlightTable.swift in Sources */,
+				BBDBD2F62ABBEFB7005B1C18 /* AirportSearch.swift in Sources */,
 				BB6FC0E92ABA3F2200DB3CBE /* SwitchPlacement.swift in Sources */,
 				BBD35AA52AB93204003AE475 /* HSLApp.swift in Sources */,
 				BB6FC1092ABA8ED600DB3CBE /* Path.swift in Sources */,

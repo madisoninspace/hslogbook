@@ -27,8 +27,8 @@ var previewContainer: ModelContainer = {
         let sampleAirline = Airline(iata: "AA", icao: "AAL", name: "American Airlines", remarks: "")
         let sampleTypeCode = TypeCode(code: "A321", manufacturer: "Airbus", model: "A321")
         let sampleAircraft = Aircraft(registration: "N582UW", type: sampleTypeCode, model: "A321-231", msn: "6175", ln: "", airline: sampleAirline, fleetName: "", fleetNumber: "582", specialLivery: true, specialLiveryName: "PSA Heritage", remarks: "")
-        let sampleOrigin = Airport(iata: "DFW", icao: "KDFW", name: "Dallas-Fort Worth Intl", location: "Dallas, Texas", latitude: 32.896944, longitude: -97.038056)
-        let sampleDestination = Airport(iata: "CMH", icao: "KCMH", name: "John Glenn Columbus Intl", location: "Columbus, Ohio", latitude: 39.998056, longitude: -82.891944, visited: true)
+        let sampleOrigin = Airport(iata: "DFW", icao: "KDFW", name: "Dallas-Fort Worth Intl", location: "Dallas, Texas", country: "US", latitude: 32.896944, longitude: -97.038056)
+        let sampleDestination = Airport(iata: "CMH", icao: "KCMH", name: "John Glenn Columbus Intl", location: "Columbus, Ohio", country: "US", latitude: 39.998056, longitude: -82.891944, visited: true)
         let sampleSpottingLocation = SpottingLocation(airport: sampleDestination, name: "Parking Garage", latitude: 39.99815, longitude: -82.88621)
         let sampleFlight = Flight(date: Date(), aircraft: sampleAircraft, operatedBy: sampleAirline, operatingFor: nil, origin: sampleOrigin, destination: sampleDestination, otherLocation: "", spottedAt: .destination, spottingLocation: sampleSpottingLocation, flightNumber: "1492", remarks: "")
         

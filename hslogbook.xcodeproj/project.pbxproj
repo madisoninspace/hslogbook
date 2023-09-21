@@ -50,6 +50,10 @@
 		BBD61C052ABBAF8F00593032 /* doc8643.csv in Resources */ = {isa = PBXBuildFile; fileRef = BBD61C042ABBAF8F00593032 /* doc8643.csv */; };
 		BBD61C0B2ABBBB2400593032 /* TitleCased.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD61C0A2ABBBB2400593032 /* TitleCased.swift */; };
 		BBD61C0D2ABBC19300593032 /* airlines.csv in Resources */ = {isa = PBXBuildFile; fileRef = BBD61C0C2ABBC19300593032 /* airlines.csv */; };
+		BBD61C0F2ABBCAE600593032 /* airports.csv in Resources */ = {isa = PBXBuildFile; fileRef = BBD61C0E2ABBCAE600593032 /* airports.csv */; };
+		BBD61C112ABBCC2F00593032 /* AirportEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD61C102ABBCC2F00593032 /* AirportEditor.swift */; };
+		BBD61C142ABBD42C00593032 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = BBD61C132ABBD42C00593032 /* Algorithms */; };
+		BBD61C172ABBD7BB00593032 /* IsoCountryCodes in Frameworks */ = {isa = PBXBuildFile; productRef = BBD61C162ABBD7BB00593032 /* IsoCountryCodes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +100,8 @@
 		BBD61C042ABBAF8F00593032 /* doc8643.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = doc8643.csv; sourceTree = "<group>"; };
 		BBD61C0A2ABBBB2400593032 /* TitleCased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCased.swift; sourceTree = "<group>"; };
 		BBD61C0C2ABBC19300593032 /* airlines.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airlines.csv; sourceTree = "<group>"; };
+		BBD61C0E2ABBCAE600593032 /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports.csv; sourceTree = "<group>"; };
+		BBD61C102ABBCC2F00593032 /* AirportEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD61C172ABBD7BB00593032 /* IsoCountryCodes in Frameworks */,
+				BBD61C142ABBD42C00593032 /* Algorithms in Frameworks */,
 				BBD35AC92AB94003003AE475 /* FlagKit in Frameworks */,
 				BBD61C012ABBAA9200593032 /* SwiftCSV in Frameworks */,
 			);
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD61BF82ABBA1F000593032 /* AirlineEditor.swift */,
+				BBD61C102ABBCC2F00593032 /* AirportEditor.swift */,
 				BB6FC11F2ABB971900DB3CBE /* TypeCodeEditor.swift */,
 			);
 			path = Editors;
@@ -291,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD61C0C2ABBC19300593032 /* airlines.csv */,
+				BBD61C0E2ABBCAE600593032 /* airports.csv */,
 				BBD61C042ABBAF8F00593032 /* doc8643.csv */,
 			);
 			path = External;
@@ -315,6 +325,8 @@
 			packageProductDependencies = (
 				BBD35AC82AB94003003AE475 /* FlagKit */,
 				BBD61C002ABBAA9200593032 /* SwiftCSV */,
+				BBD61C132ABBD42C00593032 /* Algorithms */,
+				BBD61C162ABBD7BB00593032 /* IsoCountryCodes */,
 			);
 			productName = hslogbook;
 			productReference = BBD35AA12AB93204003AE475 /* hslogbook.app */;
@@ -349,6 +361,8 @@
 			packageReferences = (
 				BBD35AC72AB94003003AE475 /* XCRemoteSwiftPackageReference "FlagKit" */,
 				BBD61BFF2ABBAA9200593032 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+				BBD61C122ABBD42C00593032 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				BBD61C152ABBD7BB00593032 /* XCRemoteSwiftPackageReference "IsoCountryCodes" */,
 			);
 			productRefGroup = BBD35AA22AB93204003AE475 /* Products */;
 			projectDirPath = "";
@@ -364,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD61C0F2ABBCAE600593032 /* airports.csv in Resources */,
 				BBD35AAC2AB93204003AE475 /* Preview Assets.xcassets in Resources */,
 				BBD61C0D2ABBC19300593032 /* airlines.csv in Resources */,
 				BBD61C052ABBAF8F00593032 /* doc8643.csv in Resources */,
@@ -406,6 +421,7 @@
 				BB6FC1142ABA99E000DB3CBE /* AircraftCore.swift in Sources */,
 				BBD61BF92ABBA1F000593032 /* AirlineEditor.swift in Sources */,
 				BB6FC1182ABA9A1B00DB3CBE /* AirportCore.swift in Sources */,
+				BBD61C112ABBCC2F00593032 /* AirportEditor.swift in Sources */,
 				BB6FC11D2ABA9EE700DB3CBE /* AirportMap.swift in Sources */,
 				BB6FC1032ABA89E600DB3CBE /* TypeCodeTable.swift in Sources */,
 				BBD35AE62AB945A5003AE475 /* ReverseGeo.swift in Sources */,
@@ -642,6 +658,22 @@
 				minimumVersion = 0.8.1;
 			};
 		};
+		BBD61C122ABBD42C00593032 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		BBD61C152ABBD7BB00593032 /* XCRemoteSwiftPackageReference "IsoCountryCodes" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/funky-monkey/IsoCountryCodes";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -654,6 +686,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBD61BFF2ABBAA9200593032 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
 			productName = SwiftCSV;
+		};
+		BBD61C132ABBD42C00593032 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBD61C122ABBD42C00593032 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		BBD61C162ABBD7BB00593032 /* IsoCountryCodes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBD61C152ABBD7BB00593032 /* XCRemoteSwiftPackageReference "IsoCountryCodes" */;
+			productName = IsoCountryCodes;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

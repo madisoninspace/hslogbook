@@ -133,13 +133,25 @@ struct AirlineTable: View {
 //            Text("Callsign")
 //                .tag(AirlineSearchScope.callsign)
         })
+        .sheet(isPresented: $showEditor, content: {
+            if let airline = airlines.first(where: {$0.id == tableSelection}) {
+                NavigationStack {
+                    AirlineEditor(airline: airline)
+                }
+            }
+        })
+        .sheet(isPresented: $showNewEditor, content: {
+            NavigationStack {
+                AirlineEditor()
+            }
+        })
         .toolbar {
             ToolbarItem {
                 Menu(content: {
                     Button {
                         showImportAlert.toggle()
                     } label: {
-                        Label("Import Type Codes", systemImage: "square.and.arrow.down.on.square")
+                        Label("Import Airlines", systemImage: "square.and.arrow.down.on.square")
                     }
                 }, label: {
                     Label("Menu", systemImage: "filemenu.and.selection")

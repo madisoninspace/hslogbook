@@ -16,6 +16,7 @@ final class Airport {
     var icao: String
     var name: String
     var location: String
+    var country: String
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     var visited: Bool = false
@@ -29,11 +30,12 @@ final class Airport {
         return .init(latitude: latitude, longitude: longitude)
     }
     
-    init(iata: String, icao: String, name: String, location: String, latitude: Double, longitude: Double, visited: Bool = false, tags: [String] = []) {
+    init(iata: String, icao: String, name: String, location: String, country: String, latitude: Double, longitude: Double, visited: Bool = false, tags: [String] = []) {
         self.iata = iata
         self.icao = icao
         self.name = name
         self.location = location
+        self.country = country
         self.latitude = latitude
         self.longitude = longitude
         self.visited = visited

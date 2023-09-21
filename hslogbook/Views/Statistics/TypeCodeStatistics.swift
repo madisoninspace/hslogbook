@@ -18,7 +18,7 @@ struct TypeCodeStatistics: View {
     
     var body: some View {
         Chart {
-            ForEach(codes.sorted(by: { $0.code < $1.code })) { fc in
+            ForEach(codes.sorted(by: { $0.code < $1.code }).filter({$0.airplanes?.count ?? 0 > 0})) { fc in
                 SectorMark(angle: .value("Count", fc.airplanes?.count ?? 0))
                     .foregroundStyle(by: .value("Type", fc.code))
                     .annotation(position: .overlay) {

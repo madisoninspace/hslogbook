@@ -100,7 +100,7 @@ struct TypeCodeTable: View {
                                 }
                                 
                                 if !manufacturer.isEmpty && !model.isEmpty {
-                                    tags.append(manufacturer.capitalized)
+                                    tags.append(manufacturer)
                                     tags.append(model)
                                     tags.append("\(manufacturer) \(model)")
                                 }

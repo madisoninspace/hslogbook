@@ -48,6 +48,8 @@
 		BBD61BF92ABBA1F000593032 /* AirlineEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD61BF82ABBA1F000593032 /* AirlineEditor.swift */; };
 		BBD61C012ABBAA9200593032 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = BBD61C002ABBAA9200593032 /* SwiftCSV */; };
 		BBD61C052ABBAF8F00593032 /* doc8643.csv in Resources */ = {isa = PBXBuildFile; fileRef = BBD61C042ABBAF8F00593032 /* doc8643.csv */; };
+		BBD61C0B2ABBBB2400593032 /* TitleCased.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD61C0A2ABBBB2400593032 /* TitleCased.swift */; };
+		BBD61C0D2ABBC19300593032 /* airlines.csv in Resources */ = {isa = PBXBuildFile; fileRef = BBD61C0C2ABBC19300593032 /* airlines.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		BBD61BF62ABB9A8800593032 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		BBD61BF82ABBA1F000593032 /* AirlineEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineEditor.swift; sourceTree = "<group>"; };
 		BBD61C042ABBAF8F00593032 /* doc8643.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = doc8643.csv; sourceTree = "<group>"; };
+		BBD61C0A2ABBBB2400593032 /* TitleCased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCased.swift; sourceTree = "<group>"; };
+		BBD61C0C2ABBC19300593032 /* airlines.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airlines.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				BB6FC0E42ABA3F1D00DB3CBE /* GWToolbarRole.swift */,
 				BB6FC0E62ABA3F2000DB3CBE /* InfoPanelHeader.swift */,
 				BB6FC0E82ABA3F2200DB3CBE /* SwitchPlacement.swift */,
+				BBD61C0A2ABBBB2400593032 /* TitleCased.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 		BBD61BFA2ABBA7CF00593032 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				BBD61C0C2ABBC19300593032 /* airlines.csv */,
 				BBD61C042ABBAF8F00593032 /* doc8643.csv */,
 			);
 			path = External;
@@ -359,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD35AAC2AB93204003AE475 /* Preview Assets.xcassets in Resources */,
+				BBD61C0D2ABBC19300593032 /* airlines.csv in Resources */,
 				BBD61C052ABBAF8F00593032 /* doc8643.csv in Resources */,
 				BBD35AA92AB93204003AE475 /* Assets.xcassets in Resources */,
 			);
@@ -380,6 +387,7 @@
 				BBD35AD12AB940E2003AE475 /* PrefersTabNavigation.swift in Sources */,
 				BB6FC1122ABA96FF00DB3CBE /* AirportTable.swift in Sources */,
 				BBD35AEC2AB94757003AE475 /* Flight.swift in Sources */,
+				BBD61C0B2ABBBB2400593032 /* TitleCased.swift in Sources */,
 				BBD35AE02AB9435E003AE475 /* TypeCode.swift in Sources */,
 				BB6FC10D2ABA934300DB3CBE /* FlightTable.swift in Sources */,
 				BB6FC0E92ABA3F2200DB3CBE /* SwitchPlacement.swift in Sources */,

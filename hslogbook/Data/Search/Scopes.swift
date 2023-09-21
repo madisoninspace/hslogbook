@@ -20,7 +20,7 @@ enum AirlineSearchScope: String, CaseIterable {
     case iata
     case icao
     case name
-    case callsign
+//    case callsign
 }
 
 enum AirportSearchScope: String, CaseIterable {

@@ -14,8 +14,8 @@ final class Airline {
     var iata: String
     var icao: String
     var name: String
-    var callsign: String
-    var country: String
+//    var callsign: String
+//    var country: String
     var remarks: String
     var tags: [String]
     
@@ -31,12 +31,12 @@ final class Airline {
         }
     }
     
-    init(iata: String, icao: String, name: String, callsign: String, country: String, remarks: String, tags: [String] = []) {
+    init(iata: String, icao: String, name: String, remarks: String, tags: [String] = []) {
         self.iata = iata
         self.icao = icao
         self.name = name
-        self.callsign = callsign
-        self.country = country
+//        self.callsign = callsign
+//        self.country = country
         self.remarks = remarks
         self.tags = tags
     }

@@ -16,8 +16,8 @@ struct AirlineEditor: View {
     @State private var iata: String = ""
     @State private var icao: String = ""
     @State private var name: String = ""
-    @State private var callsign: String = ""
-    @State private var country: String = ""
+//    @State private var callsign: String = ""
+//    @State private var country: String = ""
     @State private var remarks: String = ""
     @State private var tags: [String] = []
     
@@ -32,12 +32,12 @@ struct AirlineEditor: View {
             airline.iata = iata
             airline.icao = icao
             airline.name = name
-            airline.callsign = callsign
-            airline.country = country
+//            airline.callsign = callsign
+//            airline.country = country
             airline.remarks = remarks
             airline.tags = tags
         } else {
-            let newAirline = Airline(iata: iata, icao: icao, name: name, callsign: callsign, country: country, remarks: remarks, tags: tags)
+            let newAirline = Airline(iata: iata, icao: icao, name: name, remarks: remarks, tags: tags)
             modelContext.insert(newAirline)
         }
     }
@@ -55,9 +55,9 @@ struct AirlineEditor: View {
             tags.append(name)
         }
         
-        if !callsign.isEmpty {
-            tags.append(callsign)
-        }
+//        if !callsign.isEmpty {
+//            tags.append(callsign)
+//        }
     }
     
     @State private var showDeleteAlert: Bool = false
@@ -68,8 +68,8 @@ struct AirlineEditor: View {
                 FormTextField(title: "IATA Code", content: $iata, min: 0, max: 2)
                 FormTextField(title: "ICAO Code", content: $icao, min: 1, max: 4)
                 FormTextField(title: "Name", content: $name)
-                FormTextField(title: "Callsign", content: $callsign)
-                FormTextField(title: "Country", content: $country, min: 1, max: 2)
+//                FormTextField(title: "Callsign", content: $callsign)
+//                FormTextField(title: "Country", content: $country, min: 1, max: 2)
             }
             
             Section(content: {
@@ -125,8 +125,8 @@ struct AirlineEditor: View {
                 iata = airline.iata
                 icao = airline.icao
                 name = airline.name
-                callsign = airline.callsign
-                country = airline.country
+//                callsign = airline.callsign
+//                country = airline.country
                 remarks = airline.remarks
                 
                 if airline.tags.count > 0 {

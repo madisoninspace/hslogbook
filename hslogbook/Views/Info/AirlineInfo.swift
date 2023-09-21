@@ -32,6 +32,6 @@ struct AirlineInfo: View {
 
 #Preview {
     NavigationStack {
-        AirlineInfo(Airline(iata: "AA", icao: "AAL", name: "American Airlines", callsign: "American", country: "US", remarks: ""))
+        AirlineInfo(Airline(iata: "AA", icao: "AAL", name: "American Airlines", remarks: ""))
     }
 }

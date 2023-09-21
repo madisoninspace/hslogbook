@@ -24,7 +24,7 @@ var previewContainer: ModelContainer = {
     do {
         let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
         
-        let sampleAirline = Airline(iata: "AA", icao: "AAL", name: "American Airlines", callsign: "American", country: "US", remarks: "")
+        let sampleAirline = Airline(iata: "AA", icao: "AAL", name: "American Airlines", remarks: "")
         let sampleTypeCode = TypeCode(code: "A321", manufacturer: "Airbus", model: "A321")
         let sampleAircraft = Aircraft(registration: "N582UW", type: sampleTypeCode, model: "A321-231", msn: "6175", ln: "", airline: sampleAirline, fleetName: "", fleetNumber: "582", specialLivery: true, specialLiveryName: "PSA Heritage", remarks: "")
         let sampleOrigin = Airport(iata: "DFW", icao: "KDFW", name: "Dallas-Fort Worth Intl", location: "Dallas, Texas", latitude: 32.896944, longitude: -97.038056)

@@ -61,43 +61,7 @@ struct AirlineEditor: View {
     }
     
     @State private var showDeleteAlert: Bool = false
-    
-    @State var airlines: [Airline] = []
-    @State private var showSearchList: Bool = false
-    @State private var searchField: String = ""
-    private func list() -> some View {
-        return NavigationStack {
-            VStack(alignment: .leading) {
-                HStack {
-                    TextField("Airline Name Search", text: $searchField)
-                }.padding()
-                List(airlines.filter({$0.name.lowercased().contains(searchField.lowercased())})) { tc in
-                    Button {
-                        iata = tc.iata
-                        icao = tc.icao
-                        name = tc.name
-                        showSearchList = false
-                    } label: {
-                        HStack {
-                            Text(tc.codes)
-                                .font(.subheadline)
-                            
-                            Text(tc.name)
-                                .font(.headline)
-                        }
-                    }
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel) {
-                        showSearchList = false
-                    }
-                }
-            }
-            .navigationTitle("Search")
-        }
-    }
+    @State private var showSearch: Bool = false
     
     var body: some View {
         Form {
@@ -173,12 +137,11 @@ struct AirlineEditor: View {
                 }
             }
         }
-        .sheet(isPresented: $showSearchList, content: {
-            list()
+        .sheet(isPresented: $showSearch, content: {
+            NavigationStack {
+                AirlineSearch(iata: $iata, icao: $icao, name: $name)
+            }
         })
-        .task {
-            airlines = await airlineFile()
-        }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel", role: .cancel) {
@@ -188,7 +151,7 @@ struct AirlineEditor: View {
             
             ToolbarItem {
                 Button {
-                    showSearchList.toggle()
+                    showSearch.toggle()
                 } label: {
                     Image(systemName: "magnifyingglass")
                 }

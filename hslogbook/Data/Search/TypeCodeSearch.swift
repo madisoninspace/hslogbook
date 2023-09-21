@@ -1,5 +1,5 @@
 //
-//  AirlineSearch.swift
+//  TypeCodeSearch.swift
 //  hslogbook
 //
 //  Created by Hannah Wass on 9/21/23.
@@ -8,38 +8,38 @@
 
 import SwiftUI
 
-struct AirlineSearch: View {
+struct TypeCodeSearch: View {
     @Environment(\.dismiss) private var dismiss
     
-    @Binding var iata: String
-    @Binding var icao: String
-    @Binding var name: String
+    @Binding var code: String
+    @Binding var manufacturer: String
+    @Binding var model: String
     
-    @State private var airlines: [Airline] = []
+    @State private var codes: [TypeCode] = []
     @State private var searchQuery: String = ""
     @State private var searchMode: Int = 2
     
-    @State private var selectedAirline: Airline?
+    @State private var selectedCode: TypeCode?
     
-    private func filter() -> [Airline] {
+    private func filter() -> [TypeCode] {
         switch searchMode {
             case 0:
-                return airlines.filter({$0.icao.lowercased().contains(searchQuery.lowercased())})
+                return codes.filter({$0.code.lowercased().contains(searchQuery.lowercased())})
                 
             case 1:
-                return airlines.filter({$0.iata.lowercased().contains(searchQuery.lowercased())})
+                return codes.filter({$0.manufacturer.lowercased().contains(searchQuery.lowercased())})
                 
             case 2:
-                return airlines.filter({$0.name.lowercased().contains(searchQuery.lowercased())})
+                return codes.filter({$0.model.lowercased().contains(searchQuery.lowercased())})
                 
             default:
-                return airlines
+                return codes
         }
     }
     
     var body: some View {
         Group {
-            if airlines.count == 0 {
+            if codes.count == 0 {
                 ProgressView("Loading...")
             } else {
                 VStack(alignment: .leading) {
@@ -48,13 +48,13 @@ struct AirlineSearch: View {
                             .textFieldStyle(.roundedBorder)
                         
                         Picker(selection: $searchMode, content: {
-                            Text("ICAO")
+                            Text("ICAO Code")
                                 .tag(0)
                             
-                            Text("IATA")
+                            Text("Manufacturer")
                                 .tag(1)
                             
-                            Text("Name")
+                            Text("Model")
                                 .tag(2)
                         }, label: {
                             Text("Search Type:")
@@ -62,22 +62,22 @@ struct AirlineSearch: View {
                         .pickerStyle(.segmented)
                     }.padding(.horizontal, 15.0)
                     
-                    List(filter(), id: \.self, selection: $selectedAirline) { airline in
+                    List(filter(), id: \.self, selection: $selectedCode) { code in
                         HStack(alignment: .center) {
-                            Text(airline.codes)
+                            Text(code.code)
                                 .textScale(.secondary)
                                 .frame(width: 100.0)
                             
-                            Text(airline.name)
+                            Text(code.fullModel)
                                 .font(.headline)
                         }
                     }
                 }
             }
         }
-        .navigationTitle("Airline Search")
+        .navigationTitle("Type Code Search")
         .task {
-            airlines = await airlineFile().sorted(by: {$0.name < $1.name})
+            codes = await typeCodeFile().sorted(by: {$0.model < $1.model})
         }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
@@ -88,10 +88,10 @@ struct AirlineSearch: View {
             
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
-                    if let ap = selectedAirline {
-                        iata = ap.iata
-                        icao = ap.icao
-                        name = ap.name
+                    if let cd = selectedCode {
+                        code = cd.code
+                        manufacturer = cd.manufacturer
+                        model = cd.model
                         
                         dismiss()
                     }
@@ -102,5 +102,5 @@ struct AirlineSearch: View {
 }
 
 #Preview {
-    AirlineSearch(iata: .constant("AA"), icao: .constant("AAL"), name: .constant("American"))
+    TypeCodeSearch(code: .constant("BCS1"), manufacturer: .constant("Airbus"), model: .constant("A220-100"))
 }

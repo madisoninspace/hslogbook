@@ -49,42 +49,7 @@ struct TypeCodeEditor: View {
     }
     
     @State private var showDeleteAlert: Bool = false
-    
-    @State var typeCodes: [TypeCode] = []
-    @State private var showTypeCodeList: Bool = false
-    @State private var typeCodeSearchField: String = ""
-    private func list() -> some View {
-        return NavigationStack {
-            VStack(alignment: .leading) {
-                HStack {
-                    TextField("Model Search", text: $typeCodeSearchField)
-                }.padding()
-                List(typeCodes.filter({$0.model.lowercased().contains(typeCodeSearchField.lowercased())})) { tc in
-                    Button {
-                        code = tc.code
-                        manufacturer = tc.manufacturer.capitalized
-                        model = tc.model
-                        showTypeCodeList = false
-                    } label: {
-                        HStack {
-                            Text(tc.code)
-                                .font(.subheadline)
-                            Text(tc.fullModel)
-                                .font(.headline)
-                        }
-                    }
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel) {
-                        showTypeCodeList = false
-                    }
-                }
-            }
-            .navigationTitle("Search")
-        }
-    }
+    @State private var showSearch: Bool = false
     
     var body: some View {
         Form {
@@ -149,12 +114,11 @@ struct TypeCodeEditor: View {
                 }
             }
         }
-        .sheet(isPresented: $showTypeCodeList, content: {
-            list()
+        .sheet(isPresented: $showSearch, content: {
+            NavigationStack {
+                TypeCodeSearch(code: $code, manufacturer: $manufacturer, model: $model)
+            }
         })
-        .task {
-            typeCodes = await typeCodeFile()
-        }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel", role: .cancel) {
@@ -164,7 +128,7 @@ struct TypeCodeEditor: View {
             
             ToolbarItem {
                 Button {
-                    showTypeCodeList.toggle()
+                    showSearch.toggle()
                 } label: {
                     Image(systemName: "magnifyingglass")
                 }

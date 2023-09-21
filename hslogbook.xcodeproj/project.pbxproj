@@ -59,6 +59,7 @@
 		BBDBD2F42ABBEE1F005B1C18 /* AirportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F32ABBEE1F005B1C18 /* AirportFile.swift */; };
 		BBDBD2F62ABBEFB7005B1C18 /* AirportSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F52ABBEFB7005B1C18 /* AirportSearch.swift */; };
 		BBDBD2F82ABBF81F005B1C18 /* AirlineSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F72ABBF81F005B1C18 /* AirlineSearch.swift */; };
+		BBDBD2FA2ABBF9BF005B1C18 /* TypeCodeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F92ABBF9BF005B1C18 /* TypeCodeSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		BBDBD2F32ABBEE1F005B1C18 /* AirportFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportFile.swift; sourceTree = "<group>"; };
 		BBDBD2F52ABBEFB7005B1C18 /* AirportSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearch.swift; sourceTree = "<group>"; };
 		BBDBD2F72ABBF81F005B1C18 /* AirlineSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineSearch.swift; sourceTree = "<group>"; };
+		BBDBD2F92ABBF9BF005B1C18 /* TypeCodeSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCodeSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 				BBDBD2F72ABBF81F005B1C18 /* AirlineSearch.swift */,
 				BBDBD2F52ABBEFB7005B1C18 /* AirportSearch.swift */,
 				BBD35ADD2AB94220003AE475 /* Scopes.swift */,
+				BBDBD2F92ABBF9BF005B1C18 /* TypeCodeSearch.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				BBD35AD52AB940E2003AE475 /* AppTabView.swift in Sources */,
 				BBD35AD22AB940E2003AE475 /* AppScreen.swift in Sources */,
 				BB6FC1142ABA99E000DB3CBE /* AircraftCore.swift in Sources */,
+				BBDBD2FA2ABBF9BF005B1C18 /* TypeCodeSearch.swift in Sources */,
 				BBD61BF92ABBA1F000593032 /* AirlineEditor.swift in Sources */,
 				BB6FC1182ABA9A1B00DB3CBE /* AirportCore.swift in Sources */,
 				BBD61C112ABBCC2F00593032 /* AirportEditor.swift in Sources */,

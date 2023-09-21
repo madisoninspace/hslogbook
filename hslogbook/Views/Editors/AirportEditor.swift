@@ -63,6 +63,49 @@ struct AirportEditor: View {
     
     @State private var showDeleteAlert: Bool = false
     
+    @State var airports: [Airport] = []
+    @State private var showSearchList: Bool = false
+    @State private var searchField: String = ""
+    private func list() -> some View {
+        return NavigationStack {
+            VStack(alignment: .leading) {
+                HStack {
+                    TextField("Airport Name Search", text: $searchField)
+                }.padding()
+                List(airports.filter({$0.icao.lowercased().contains(searchField.lowercased())})) { tc in
+                    Button {
+                        iata = tc.iata
+                        icao = tc.icao
+                        name = tc.name
+                        location = tc.location
+                        country = tc.country
+                        latitudeString = String(tc.latitude)
+                        longitudeString = String(tc.longitude)
+                        
+                        name = name.replacingOccurrences(of: "International", with: "Intl").replacingOccurrences(of: "Airport", with: "")
+                        showSearchList = false
+                    } label: {
+                        HStack {
+                            Text(tc.codes)
+                                .font(.subheadline)
+                            
+                            Text(tc.name)
+                                .font(.headline)
+                        }
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", role: .cancel) {
+                        showSearchList = false
+                    }
+                }
+            }
+            .navigationTitle("Search")
+        }
+    }
+    
     var body: some View {
         Form {
             Section {
@@ -136,10 +179,24 @@ struct AirportEditor: View {
                 tags = airport.tags
             }
         }
+        .sheet(isPresented: $showSearchList, content: {
+            list()
+        })
+        .task {
+            airports = await airportFile()
+        }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel", role: .cancel) {
                     dismiss()
+                }
+            }
+            
+            ToolbarItem {
+                Button {
+                    showSearchList.toggle()
+                } label: {
+                    Image(systemName: "magnifyingglass")
                 }
             }
             

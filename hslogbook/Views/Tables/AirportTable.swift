@@ -163,17 +163,17 @@ struct AirportTable: View {
             }
         })
         .toolbar {
-            ToolbarItem {
-                Menu(content: {
-                    Button {
-                        showImportAlert.toggle()
-                    } label: {
-                        Label("Import Airports", systemImage: "square.and.arrow.down.on.square")
-                    }
-                }, label: {
-                    Label("Menu", systemImage: "filemenu.and.selection")
-                })
-            }
+//            ToolbarItem {
+//                Menu(content: {
+//                    Button {
+//                        showImportAlert.toggle()
+//                    } label: {
+//                        Label("Import Airports", systemImage: "square.and.arrow.down.on.square")
+//                    }
+//                }, label: {
+//                    Label("Menu", systemImage: "filemenu.and.selection")
+//                })
+//            }
             
             ToolbarItem(placement: .topBarTrailing) {
                 Toggle(isOn: $hideUnvisitedAirports.animation(.spring), label: {

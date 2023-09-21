@@ -26,6 +26,14 @@ final class Airport {
     @Relationship(deleteRule: .nullify, inverse: \Flight.origin) var flightsAsOrigin: [Flight]? = []
     @Relationship(deleteRule: .nullify, inverse: \Flight.destination) var flightsAsDestination: [Flight]? = []
     
+    @Transient var codes: String {
+        if iata.isEmpty {
+            return icao
+        } else {
+            return "\(iata)/\(icao)"
+        }
+    }
+    
     @Transient var coordinates: CLLocationCoordinate2D {
         return .init(latitude: latitude, longitude: longitude)
     }

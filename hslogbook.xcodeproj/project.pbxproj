@@ -54,6 +54,9 @@
 		BBD61C112ABBCC2F00593032 /* AirportEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD61C102ABBCC2F00593032 /* AirportEditor.swift */; };
 		BBD61C142ABBD42C00593032 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = BBD61C132ABBD42C00593032 /* Algorithms */; };
 		BBD61C172ABBD7BB00593032 /* IsoCountryCodes in Frameworks */ = {isa = PBXBuildFile; productRef = BBD61C162ABBD7BB00593032 /* IsoCountryCodes */; };
+		BBDBD2F02ABBE7D3005B1C18 /* TypeCodeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2EF2ABBE7D3005B1C18 /* TypeCodeFile.swift */; };
+		BBDBD2F22ABBEC5A005B1C18 /* AirlineFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F12ABBEC5A005B1C18 /* AirlineFile.swift */; };
+		BBDBD2F42ABBEE1F005B1C18 /* AirportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD2F32ABBEE1F005B1C18 /* AirportFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +105,9 @@
 		BBD61C0C2ABBC19300593032 /* airlines.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airlines.csv; sourceTree = "<group>"; };
 		BBD61C0E2ABBCAE600593032 /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports.csv; sourceTree = "<group>"; };
 		BBD61C102ABBCC2F00593032 /* AirportEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportEditor.swift; sourceTree = "<group>"; };
+		BBDBD2EF2ABBE7D3005B1C18 /* TypeCodeFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCodeFile.swift; sourceTree = "<group>"; };
+		BBDBD2F12ABBEC5A005B1C18 /* AirlineFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineFile.swift; sourceTree = "<group>"; };
+		BBDBD2F32ABBEE1F005B1C18 /* AirportFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +308,9 @@
 				BBD61C0C2ABBC19300593032 /* airlines.csv */,
 				BBD61C0E2ABBCAE600593032 /* airports.csv */,
 				BBD61C042ABBAF8F00593032 /* doc8643.csv */,
+				BBDBD2F12ABBEC5A005B1C18 /* AirlineFile.swift */,
+				BBDBD2F32ABBEE1F005B1C18 /* AirportFile.swift */,
+				BBDBD2EF2ABBE7D3005B1C18 /* TypeCodeFile.swift */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -399,6 +408,7 @@
 				BBD35AEA2AB94632003AE475 /* Aircraft.swift in Sources */,
 				BBD35ADE2AB94220003AE475 /* Scopes.swift in Sources */,
 				BB6FC1162ABA9A0000DB3CBE /* AirlineCore.swift in Sources */,
+				BBDBD2F02ABBE7D3005B1C18 /* TypeCodeFile.swift in Sources */,
 				BBD35AD12AB940E2003AE475 /* PrefersTabNavigation.swift in Sources */,
 				BB6FC1122ABA96FF00DB3CBE /* AirportTable.swift in Sources */,
 				BBD35AEC2AB94757003AE475 /* Flight.swift in Sources */,
@@ -408,6 +418,7 @@
 				BB6FC0E92ABA3F2200DB3CBE /* SwitchPlacement.swift in Sources */,
 				BBD35AA52AB93204003AE475 /* HSLApp.swift in Sources */,
 				BB6FC1092ABA8ED600DB3CBE /* Path.swift in Sources */,
+				BBDBD2F22ABBEC5A005B1C18 /* AirlineFile.swift in Sources */,
 				BBD35AE82AB94601003AE475 /* Airline.swift in Sources */,
 				BBD35AE42AB94549003AE475 /* SpottingLocation.swift in Sources */,
 				BBD35AD32AB940E2003AE475 /* AppDetailColumn.swift in Sources */,
@@ -415,6 +426,7 @@
 				BB6FC11A2ABA9A3600DB3CBE /* FlightCore.swift in Sources */,
 				BB6FC1202ABB971900DB3CBE /* TypeCodeEditor.swift in Sources */,
 				BBD35AE22AB943B1003AE475 /* Airport.swift in Sources */,
+				BBDBD2F42ABBEE1F005B1C18 /* AirportFile.swift in Sources */,
 				BB6FC10B2ABA929800DB3CBE /* AirlineTable.swift in Sources */,
 				BBD35AD52AB940E2003AE475 /* AppTabView.swift in Sources */,
 				BBD35AD22AB940E2003AE475 /* AppScreen.swift in Sources */,

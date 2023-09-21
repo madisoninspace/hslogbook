@@ -146,17 +146,17 @@ struct AirlineTable: View {
             }
         })
         .toolbar {
-            ToolbarItem {
-                Menu(content: {
-                    Button {
-                        showImportAlert.toggle()
-                    } label: {
-                        Label("Import Airlines", systemImage: "square.and.arrow.down.on.square")
-                    }
-                }, label: {
-                    Label("Menu", systemImage: "filemenu.and.selection")
-                })
-            }
+//            ToolbarItem {
+//                Menu(content: {
+//                    Button {
+//                        showImportAlert.toggle()
+//                    } label: {
+//                        Label("Import Airlines", systemImage: "square.and.arrow.down.on.square")
+//                    }
+//                }, label: {
+//                    Label("Menu", systemImage: "filemenu.and.selection")
+//                })
+//            }
             
             ToolbarItem {
                 Button {

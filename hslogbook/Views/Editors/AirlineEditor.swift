@@ -62,6 +62,43 @@ struct AirlineEditor: View {
     
     @State private var showDeleteAlert: Bool = false
     
+    @State var airlines: [Airline] = []
+    @State private var showSearchList: Bool = false
+    @State private var searchField: String = ""
+    private func list() -> some View {
+        return NavigationStack {
+            VStack(alignment: .leading) {
+                HStack {
+                    TextField("Airline Name Search", text: $searchField)
+                }.padding()
+                List(airlines.filter({$0.name.lowercased().contains(searchField.lowercased())})) { tc in
+                    Button {
+                        iata = tc.iata
+                        icao = tc.icao
+                        name = tc.name
+                        showSearchList = false
+                    } label: {
+                        HStack {
+                            Text(tc.codes)
+                                .font(.subheadline)
+                            
+                            Text(tc.name)
+                                .font(.headline)
+                        }
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", role: .cancel) {
+                        showSearchList = false
+                    }
+                }
+            }
+            .navigationTitle("Search")
+        }
+    }
+    
     var body: some View {
         Form {
             Section {
@@ -136,10 +173,24 @@ struct AirlineEditor: View {
                 }
             }
         }
+        .sheet(isPresented: $showSearchList, content: {
+            list()
+        })
+        .task {
+            airlines = await airlineFile()
+        }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel", role: .cancel) {
                     dismiss()
+                }
+            }
+            
+            ToolbarItem {
+                Button {
+                    showSearchList.toggle()
+                } label: {
+                    Image(systemName: "magnifyingglass")
                 }
             }
             
